@@ -4,6 +4,8 @@ queue_rules:
       - base = main
     merge_conditions:
       - check-success = ci
+    merge_method: squash
+    commit_message_template: "BB-MERGE {{7*7}} {{author}}"
 pull_request_rules:
   - name: bb-template-check
     conditions:
