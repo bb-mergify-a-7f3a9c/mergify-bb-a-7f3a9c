@@ -1,0 +1,13 @@
+queue_rules:
+  - name: default
+    queue_conditions:
+      - base = main
+    merge_conditions:
+      - check-success = ci
+pull_request_rules:
+  - name: bb-template-check
+    conditions:
+      - base = main
+    actions:
+      comment:
+        message: "BB-TEMPLATE {{7*7}} {{author}}"
